@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "concurrently -n BE,FE -c white,green \"cd server && nodemon index.js\" \"cd client && npm run dev\"",
@@ -13,8 +14,5 @@
     "url": "git+https://github.com/catxrin/InterMedica.git"
   },
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/catxrin/InterMedica/issues"
-  },
   "homepage": "https://github.com/catxrin/InterMedica#readme"
 }
