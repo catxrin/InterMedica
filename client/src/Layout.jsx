@@ -1,11 +1,16 @@
 import { Outlet } from "react-router-dom";
-import { AppHeader } from "./components/Navigation/Header";
+
+import Navigation from "./components/Navigation/Navigation";
+import Footer from "./components/Footer";
 
 function Layout() {
   return (
-    <div className="flex flex-col">
-      <AppHeader />
-      <Outlet />
+    <div className="flex flex-col h-screen">
+      <Navigation />
+      <div className="h-full">
+        <Outlet />
+      </div>
+      <Footer />
     </div>
   );
 }

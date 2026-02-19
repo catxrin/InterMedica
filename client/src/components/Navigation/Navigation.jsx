@@ -6,14 +6,14 @@ import { NavigationLink } from "./NavigationLink";
 
 import { Logo } from "../Logo";
 
-export function AppHeader() {
+export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const { pathname } = useLocation();
   const navigate = useNavigate();
 
   return (
-    <header className="sticky top-0 font-sans shadow-sm">
+    <header className="sticky top-0 bg-green-50 font-sans shadow-sm">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 lg:px-8">
         <Logo />
         <nav className="hidden items-center gap-1 lg:flex">
