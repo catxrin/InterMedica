@@ -14,5 +14,8 @@
     "url": "git+https://github.com/catxrin/InterMedica.git"
   },
   "license": "ISC",
-  "homepage": "https://github.com/catxrin/InterMedica#readme"
+  "homepage": "https://github.com/catxrin/InterMedica#readme",
+  "dependencies": {
+    "concurrently": "^9.2.1"
+  }
 }
