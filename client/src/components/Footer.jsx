@@ -1,4 +1,4 @@
-import { ShieldCheck } from "lucide-react";
+import Icon from "./Icon";
 
 export default function Footer() {
   return (
@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-4 px-4 py-8 text-center lg:flex-row lg:text-left">
         <div className="flex items-center gap-2">
           <div className="flex size-7 items-center justify-center rounded-md bg-primary">
-            <ShieldCheck className="size-4 text-white" />
+            <Icon name="ShieldCheck" className="size-4 text-white" />
           </div>
           <span className="font-sans font-bold text-sm">InterMedica</span>
         </div>

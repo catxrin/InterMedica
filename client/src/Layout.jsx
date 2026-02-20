@@ -7,7 +7,7 @@ function Layout() {
   return (
     <div className="flex flex-col h-screen">
       <Navigation />
-      <div className="h-full">
+      <div className="h-full overflow-auto">
         <Outlet />
       </div>
       <Footer />

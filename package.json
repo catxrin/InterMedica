@@ -4,10 +4,14 @@
   "description": "",
   "main": "index.js",
   "type": "module",
+  "workspaces": [
+    "client",
+    "server"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "concurrently -n BE,FE -c white,green \"cd server && nodemon index.js\" \"cd client && npm run dev\"",
-    "setup": "concurrently -n root,BE,FE -c gray \"npm i\" \"cd server && npm i\" \"cd client && npm i\""
+    "setup": "npm install"
   },
   "repository": {
     "type": "git",
@@ -16,6 +20,8 @@
   "license": "ISC",
   "homepage": "https://github.com/catxrin/InterMedica#readme",
   "dependencies": {
-    "concurrently": "^9.2.1"
+    "@hookform/resolvers": "^5.2.2",
+    "concurrently": "^9.2.1",
+    "nope-validator": "^1.1.0"
   }
 }
