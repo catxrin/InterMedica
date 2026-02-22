@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 
-export const isAuth = async (req, res, next) => {
+export const authMiddleware = async (req, res, next) => {
   const baseUrl = req.path;
   const token = req.cookies.auth;
 

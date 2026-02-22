@@ -19,17 +19,17 @@
   },
   "homepage": "https://github.com/catxrin/InterMedica#readme",
   "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
     "bcrypt": "^6.0.0",
     "body-parser": "^2.2.1",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
+    "express-throttle": "^2.0.0",
     "jsonwebtoken": "^9.0.3",
     "mongoose": "^9.0.0",
     "nodemon": "^3.1.11",
-    "nope-validator": "^1.1.0",
-    "@hookform/resolvers": "^5.2.2"
-
+    "nope-validator": "^1.1.0"
   }
 }

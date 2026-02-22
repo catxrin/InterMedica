@@ -5,7 +5,8 @@ import cookieParser from 'cookie-parser';
 
 import './src/db/db.js';
 
-import { isAuth } from './src/middlewares/auth.js';
+import { authMiddleware } from './src/middlewares/authMiddleware.js';
+import { errorMiddleware } from './src/middlewares/errorMiddleware.js';
 
 import userRoutes from './src/routes/user.js';
 import authRoutes from './src/routes/auth.js';
@@ -22,7 +23,8 @@ app.use(cookieParser());
 app.use('/user', userRoutes);
 app.use('/auth', authRoutes);
 
-app.use(isAuth);
+app.use(authMiddleware);
+app.use(errorMiddleware)
 
 app.listen(process.env.PORT, () => {
   console.log(`Server is listening on port ${process.env.PORT}`);
