@@ -2,14 +2,34 @@ import { FormProvider, useForm } from "react-hook-form";
 
 import { nopeResolver } from "@hookform/resolvers/nope";
 
+import { toast } from "react-toastify";
+import { BASE_URL } from "../../../consts";
+
 import Input from "../../Inputs/Input";
 import { registerValidation } from "../../../../../shared/validations";
 
+
 export default function RegisterForm() {
   const methods = useForm({ resolver: nopeResolver(registerValidation) });
+  const {errors}=methods.formState
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    methods.clearErrors("root")
+    try {
+      const res = await fetch(BASE_URL + "/auth/register", {
+        method: "POST",
+        headers: {
+        "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data)
+      })
+
+      const body = await res.json()
+      if (!res.ok) { return methods.setError("root",{message:body.message||"Registration failed"})}
+    }
+    catch (err) {
+      toast.error("Network error. Please try again.")
+    }
   };
 
   return (
@@ -25,6 +45,7 @@ export default function RegisterForm() {
           <p className="text-gray-500">
             Free forever. No credit card required.
           </p>
+          {errors?.root && <p className="text-red-700 text-sm">{errors.root.message}</p>}
         </div>
         <div className="flex flex-col w-full gap-5">
           <div className="flex sm:flex-row flex-col justify-between gap-5 w-full">
