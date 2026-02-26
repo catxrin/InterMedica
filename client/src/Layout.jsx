@@ -5,12 +5,12 @@ import Footer from "./components/Footer";
 
 function Layout() {
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col min-h-screen">
       <Navigation />
-      <div className="h-full overflow-auto">
-        <Outlet />
-      </div>
+      <div className="flex grow justify-between flex-col overflow-auto">
+      <Outlet />
       <Footer />
+      </div>
     </div>
   );
 }

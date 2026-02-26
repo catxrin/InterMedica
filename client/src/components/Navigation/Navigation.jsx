@@ -63,10 +63,10 @@ export default function Navigation() {
             ))}
           </nav>
           <div className="mt-4 flex flex-col gap-2 text-sm">
-            <Link to="/auth/login" className="button-secondary w-full">
+            <Link onClick={() => setMobileOpen(false)} to="/auth/login" className="button-secondary w-full">
               Sign In
             </Link>
-            <Link to="/auth/register" className="button-primary w-full">
+            <Link onClick={() => setMobileOpen(false)} to="/auth/register" className="button-primary w-full">
               Get Started
             </Link>
           </div>
